@@ -41,4 +41,40 @@ def place_mark(board,mark,position):
     board[position] = mark
 
 
-game_board = ['','','','','','','','','','']
+def win_check(board,mark):
+    '''
+    This function checks to see if the current player has won.
+    '''
+    if board[1] == mark and board[2] == mark and board[3] == mark:
+        print(f'{mark} has won!')
+        return True
+    
+    if board[4] == mark and board[5] == mark and board[6] == mark:
+        print(f'{mark} has won!')
+        return True
+    
+    if board[7] == mark and board[8] == mark and board[9] == mark:
+        print(f'{mark} has won!')
+        return True
+    
+    if board[1] == mark and board[5] == mark and board[9] == mark:
+        print(f'{mark} has won!')
+        return True
+    
+    if board[3] == mark and board[5] == mark and board[7] == mark:
+        print(f'{mark} has won!')
+        return True
+    
+    if board[1] == mark and board[4] == mark and board[7] == mark:
+        print(f'{mark} has won!')
+        return True
+    
+    if board[2] == mark and board[5] == mark and board[8] == mark:
+        print(f'{mark} has won!')
+        return True
+    
+    if board[3] == mark and board[6] == mark and board[9] == mark:
+        print(f'{mark} has won!')
+        return True
+
+game_board = ['#','','','','','','','','','']
