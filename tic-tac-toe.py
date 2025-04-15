@@ -90,5 +90,16 @@ def choose_first():
     else:
         print('player 2 goes first!')
 
+
+def space_check(board,position):
+    '''
+    This function checks if a space is blank or if there is already a mark on it.
+    '''
+    if board[position] != '':
+        return True
+    else:
+        return False
+
+
         
 game_board = ['#','','','','','','','','','']
