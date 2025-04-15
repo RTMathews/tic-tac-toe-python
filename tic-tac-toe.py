@@ -43,3 +43,76 @@ def player_position(board, mark, position):
             board[position].replace('',mark)
 
     return board
+
+def check_win(board):
+    '''
+    This function checks the board to see if there is a winner or a draw.
+    '''
+    is_won = False
+    is_draw = False
+    tiles_used = 0
+
+    #A lot of if statements checking if X won
+
+    if board[1] == 'X' and board[2] == 'X' and board[3] == 'X':
+        is_won = True
+        print('X Wins!')
+        return is_won
+    
+    if board[4] == 'X' and board[5] == 'X' and board[6] == 'X':
+        is_won = True
+        print('X Wins!')
+        return is_won
+    
+    if board[7] == 'X' and board[8] == 'X' and board[9] == 'X':
+        is_won = True
+        print('X Wins!')
+        return is_won
+    
+    
+    if board[1] == 'X' and board[5] == 'X' and board[9] == 'X':
+        is_won = True
+        print('X Wins!')
+        return is_won
+    
+    if board[3] == 'X' and board[5] == 'X' and board[7] == 'X':
+        is_won = True
+        print('X Wins!')
+        return is_won
+    
+    #A lot of if statements checking if O won
+
+    if board[1] == 'O' and board[2] == 'O' and board[3] == 'O':
+        is_won = True
+        print('O Wins!')
+        return is_won
+    
+    if board[4] == 'O' and board[5] == 'O' and board[6] == 'O':
+        is_won = True
+        print('O Wins!')
+        return is_won
+    
+    if board[7] == 'O' and board[8] == 'O' and board[9] == 'O':
+        is_won = True
+        print('O Wins!')
+        return is_won
+    
+    if board[1] == 'O' and board[5] == 'O' and board[9] == 'O':
+        is_won = True
+        print('O Wins!')
+        return is_won
+    
+    if board[3] == 'O' and board[5] == 'O' and board[7] == 'O':
+        is_won = True
+        print('O Wins!')
+        return is_won
+    
+    #Checks if all of the tiles are full and no one won
+    
+    for tile in board:
+        if tile != '':
+            tiles_used += 1
+            if tiles_used == 9:
+                is_draw = True
+                print("It's a Draw!")
+                return is_draw
