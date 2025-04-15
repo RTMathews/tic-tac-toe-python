@@ -76,5 +76,19 @@ def win_check(board,mark):
     if board[3] == mark and board[6] == mark and board[9] == mark:
         print(f'{mark} has won!')
         return True
+    
 
+def choose_first():
+    '''
+    This function uses the randint function to decide which player goes first.
+    '''
+
+    first = random.randint(1,2)
+    
+    if first == 1:
+        print('Player 1 goes first!')
+    else:
+        print('player 2 goes first!')
+
+        
 game_board = ['#','','','','','','','','','']
