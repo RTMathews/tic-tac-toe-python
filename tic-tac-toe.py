@@ -99,7 +99,23 @@ def space_check(board,position):
         return True
     else:
         return False
+    
 
+def full_board_check(board):
+    '''
+    This function checks if the board is full and there are no winners making it a draw.
+    '''
+    board_count = 0
+
+    for spaces in board:
+        if spaces != '':
+            board_count += 1
+        
+        if board_count == 9:
+            return True
+        
+        else:
+            return False
 
         
 game_board = ['#','','','','','','','','','']
