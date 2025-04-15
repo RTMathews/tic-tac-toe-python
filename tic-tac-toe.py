@@ -1,3 +1,5 @@
+import random
+
 def show_board(board):
     '''
     This function will display and keep the tic tac toe board updated during the game.
@@ -116,3 +118,19 @@ def check_win(board):
                 is_draw = True
                 print("It's a Draw!")
                 return is_draw
+            
+
+def go_again():
+    '''
+    This function asks the players if they would like to play again.
+    '''
+    again = 'idk'
+
+    while again != 'Y' or again != 'N':
+        again = input('Would you like to play again? Y or N : ')
+        if again == 'Y':
+            again = True
+            return again
+        
+        else:
+            return False
