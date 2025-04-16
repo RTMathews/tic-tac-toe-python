@@ -128,6 +128,19 @@ def player_choice(board):
         position = int(input('This cell is already in use! Pick a different one.: '))
 
     return position
+
+
+def replay():
+    '''
+    This function asks the player if they would like to play again.
+    '''
+    while again != 'Y' and again != 'N':
+        again = input('Would you like to play again? (Y / N): ')
+    
+    if again == 'Y':
+        return True
+    else:
+        return False
     
         
 game_board = ['#','','','','','','','','','']
