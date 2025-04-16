@@ -33,11 +33,6 @@ def place_mark(board,mark,position):
     '''
     This function let's the player choose which cell to put their mark in.
     '''
-    choice = ''
-    accepted_list = [1,2,3,4,5,6,7,8,9]
-
-    while choice not in accepted_list:
-        choice = int(input('Enter the number of the cell you want to place your mark.: '))
     board[position] = mark
 
 
@@ -86,9 +81,9 @@ def choose_first():
     first = random.randint(1,2)
     
     if first == 1:
-        print('Player 1 goes first!')
+        return 'Player 1 goes first!'
     else:
-        print('player 2 goes first!')
+        return 'Player 2 goes first!'
 
 
 def space_check(board,position):
@@ -116,6 +111,23 @@ def full_board_check(board):
         
         else:
             return False
+        
 
+def player_choice(board):
+    '''
+    This function asks the player for the cell number they would like to put their mark in.
+    '''
+    accepted_list = [1,2,3,4,5,6,7,8,9]
+
+    position = ''
+
+    while position not in accepted_list:
+        position = int(input('Enter the number of the cell you want to place your mark.: '))
+
+    while space_check(board,position) == True:
+        position = int(input('This cell is already in use! Pick a different one.: '))
+
+    return position
+    
         
 game_board = ['#','','','','','','','','','']
